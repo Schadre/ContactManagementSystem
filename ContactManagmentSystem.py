@@ -16,16 +16,31 @@ def ContactManagementSystem():
     }
 
     def new_contact(contacts):
-        name = input("Enter contact full name: ")
-        phone = input("Enter contact phone number: ")
-        email = input("Enter contact email: ")
-        update = (len(contacts.keys()) + 1)
-        contacts[update] = {
+        while True:
+            name = input("Enter contact full name: ")
+            phone = input("Enter contact phone number: ")
+            match = re.search(r"\d{1}-\d{3}-\d{3}-\d{4}", phone)
+            if match:
+                print("Approved Number")
+            else:
+                print("Number not approved, try again")
+                continue
+            email = input("Enter contact email: ")
+            emailmatch = re.search(r"[A_Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}", email)
+            if emailmatch:
+                print("Approved Email")
+            else:
+                print("Email not approved, try again")
+                continue
+        
+            update = (len(contacts.keys()) + 1)
+            contacts[update] = {
             "Name": name,
             "Phone Number": phone,
             "Email": email
         }
-        print(f"You contact {name} has been added!")
+            print(f"Your contact {name} has been added!")
+            break
     
     def edit_contact(contacts):
         for x, y in contacts.items():
@@ -69,13 +84,12 @@ def ContactManagementSystem():
         confirm = open('contacts.txt', 'r')
         print(confirm.read())
 
-    def import_contact():
-        data = {}
+    def import_contact(contacts):
         with open('contacts.txt', 'r') as file:
-            for line in file:
-                key, value = line.strip().split(':', 1)
-                data[key] = value
-        print(data)
+            import_contacts = json.load(file)
+            contacts.update(import_contacts)
+            print("Contacts have been successfully imported!")
+
         
     while True:
         try:
@@ -95,7 +109,7 @@ def ContactManagementSystem():
             elif option == "6":
                 export_contact(contacts)
             elif option == "7":
-                import_contact()
+                import_contact(contacts)
             elif option == "8":
                 print("Goodbye, have a nice day!")
                 break
