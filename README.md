@@ -52,7 +52,32 @@ python ContactManagementSystem.py
     - Exit the program
 
 ## Notes
-> - The phone number must match `1-XXX-XXXX` format
-> - The email address must follow a valid format, e.g., `example@domain.com`
-> If any input is invalid, the program will prompt you to try again
+>   - The phone number must match `1-XXX-XXXX` format
+>   - The email address must follow a valid format, e.g., `example@domain.com`
+>   - If any input is invalid, the program will prompt you to try again
 
+## Error Handling
+>   - KeyError: Occurs when trying to access a contact that doesn't exist
+>   - ValueError: Occurs when entering invalid inputs. The program will prompt you to try again. 
+
+## File Management
+>   - `contacts.txt` is used to save and retrieve contacts
+>   - Ensure `contacts.txt` is in the same directory as the program for importing contacts
+
+## Example Usage
+
+### Adding a Contact
+```
+Enter contact full name: Christopher Tucker
+Enter contact phone number: 1-123-456-7890
+Approved Number
+Enter contact email: TuckerTimes@example.com
+Approved Email
+Your contact Christopher Tucker has been added!
+```
+
+## Viewing All Contacts
+```
+Contact Number #1 - Contact Info: {'Name': 'John Doe', 'Phone Number': '1-800-000-0000', 'Email': 'JohnDoe@gmail.com'}
+Contact Number #2 - Contact Info: {'Name': 'Jane Doe', 'Phone Number': '1-989-111-9111', 'Email': 'JaneDoe@outlook.com'}
+```
