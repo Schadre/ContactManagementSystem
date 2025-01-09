@@ -52,7 +52,7 @@ python ContactManagementSystem.py
     - Exit the program
 
 ## Notes
-> The phone number must match `1-XXX-XXXX` format
-> The email address must follow a valid format, e.g., `example@domain.com`
+> - The phone number must match `1-XXX-XXXX` format
+> - The email address must follow a valid format, e.g., `example@domain.com`
 > If any input is invalid, the program will prompt you to try again
 
