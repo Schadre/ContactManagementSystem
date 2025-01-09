@@ -12,10 +12,10 @@ Prerequisites:
 > Python 3.6 or higher installed on your computer.
 
 Running the Program:
-> Save the provided code in a file named `ContactManagementSystem.py`
-> Open a terminal or command prompt
-> Navigate to the directory containing `ContactManagementSystem.py`
-> Run the program using the command:
+> - Save the provided code in a file named `ContactManagementSystem.py`
+> - Open a terminal or command prompt
+> - Navigate to the directory containing `ContactManagementSystem.py`
+> - Run the program using the command:
 ```
 python ContactManagementSystem.py
 ```
@@ -81,3 +81,7 @@ Your contact Christopher Tucker has been added!
 Contact Number #1 - Contact Info: {'Name': 'John Doe', 'Phone Number': '1-800-000-0000', 'Email': 'JohnDoe@gmail.com'}
 Contact Number #2 - Contact Info: {'Name': 'Jane Doe', 'Phone Number': '1-989-111-9111', 'Email': 'JaneDoe@outlook.com'}
 ```
+
+## License
+
+*This Contact Management System is open-source. Feel free to modify and use it as needed.*
